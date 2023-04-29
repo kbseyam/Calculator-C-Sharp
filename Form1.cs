@@ -1,26 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Calculator {
     public partial class Form1 : Form {
         public Form1() {
             InitializeComponent();
         }
-
-        //double result = 0;
-
-        //const char PLUS_SIGN = '+';
-        //const char MINUS_SIGN = '-';
-        //const char MULTIPLICATION_SIGN = '×';
-        //const char DIVISION_SIGN = '÷';
 
         enum Opertions : int {
             PLUS = '+',
@@ -31,12 +17,14 @@ namespace Calculator {
 
 
         private void btn0_Click(object sender, EventArgs e) {
-            // TODO
             labelResult.Text += '0';
         }
 
+        private void btn00_Click(object sender, EventArgs e) {
+            labelResult.Text += "00";
+        }
+
         private void btnDot_Click(object sender, EventArgs e) {
-            // TODO
             if (string.IsNullOrEmpty(labelResult.Text)) {
                 labelResult.Text = "0.";
             } else if (IsOperator(labelResult.Text.Last())) {
@@ -47,118 +35,92 @@ namespace Calculator {
         }
 
         private void btnEqual_Click(object sender, EventArgs e) {
-            // TODO
-            //if (string.IsNullOrEmpty(labelResult.Text)) {
-            //    labelResult.Text = result.ToString();
-            //}
             if (!string.IsNullOrEmpty(labelResult.Text)) {
                 labelResult.Text = Calculate();
             }
-
         }
 
         private void btn1_Click(object sender, EventArgs e) {
-            // TODO
             labelResult.Text += '1';
         }
 
         private void btn2_Click(object sender, EventArgs e) {
-            // TODO
             labelResult.Text += '2';
         }
 
         private void btn3_Click(object sender, EventArgs e) {
-            // TODO
             labelResult.Text += '3';
         }
 
         private void btnPlus_Click(object sender, EventArgs e) {
-            // TODO
             if (string.IsNullOrEmpty(labelResult.Text))
                 return;
 
             if (!ResultIsEndWithOperation())
                 labelResult.Text += (char)Opertions.PLUS;
-
-
         }
 
         private void btn4_Click(object sender, EventArgs e) {
-            // TODO
             labelResult.Text += '4';
         }
 
         private void btn5_Click(object sender, EventArgs e) {
-            // TODO
             labelResult.Text += '5';
         }
 
         private void btn6_Click(object sender, EventArgs e) {
-            // TODO
             labelResult.Text += '6';
         }
 
         private void btnMinus_Click(object sender, EventArgs e) {
-            // TODO
             if (string.IsNullOrEmpty(labelResult.Text))
                 return;
 
             if (!ResultIsEndWithOperation())
-                labelResult.Text += '-';
+                labelResult.Text += (char)Opertions.MINUS;
         }
 
         private void btn7_Click(object sender, EventArgs e) {
-            // TODO
             labelResult.Text += '7';
         }
 
         private void btn8_Click(object sender, EventArgs e) {
-            // TODO
             labelResult.Text += '8';
         }
 
         private void btn9_Click(object sender, EventArgs e) {
-            // TODO
             labelResult.Text += '9';
         }
 
         private void btnMultiplication_Click(object sender, EventArgs e) {
-            // TODO
             if (string.IsNullOrEmpty(labelResult.Text))
                 return;
 
             if (!ResultIsEndWithOperation())
-                labelResult.Text += '×';
+                labelResult.Text += (char)Opertions.MULTIPLICATION;
         }
 
         private void btnClear_Click(object sender, EventArgs e) {
-            // TODO
             labelResult.Text = string.Empty;
         }
 
         private void btnBackspace_Click(object sender, EventArgs e) {
-            // TODO
             if (!string.IsNullOrEmpty(labelResult.Text)) {
                 labelResult.Text = labelResult.Text.Remove(labelResult.Text.Length - 1);
             }
         }
 
-        private void btnPlusMinus_Click(object sender, EventArgs e) {
-            // TODO
-        }
-
         private void btnDivision_Click(object sender, EventArgs e) {
-            // TODO
             if (string.IsNullOrEmpty(labelResult.Text))
                 return;
 
             if (!ResultIsEndWithOperation())
-                labelResult.Text += '÷';
+                labelResult.Text += (char)Opertions.DIVISION;
         }
 
         private bool ResultIsEndWithOperation() {
-            return labelResult.Text.EndsWith("+") || labelResult.Text.EndsWith("-") ||
-                labelResult.Text.EndsWith("×") || labelResult.Text.EndsWith("÷");
+            return labelResult.Text.Last() == (char)Opertions.PLUS || labelResult.Text.Last() == (char)Opertions.MINUS ||
+                labelResult.Text.Last() == (char)Opertions.MULTIPLICATION || labelResult.Text.Last() == (char)Opertions.DIVISION;
         }
 
         private int IndexPrevOper(string text, int currentOperIndex) {
@@ -250,5 +212,6 @@ namespace Calculator {
 
             return temp.Contains('.');
         }
+
     }
 }

@@ -26,7 +26,6 @@
             this.labelResult = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnBackspace = new System.Windows.Forms.Button();
-            this.btnPlusMinus = new System.Windows.Forms.Button();
             this.btnDivision = new System.Windows.Forms.Button();
             this.btnMultiplication = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
@@ -43,6 +42,7 @@
             this.btnEqual = new System.Windows.Forms.Button();
             this.btnDot = new System.Windows.Forms.Button();
             this.btn0 = new System.Windows.Forms.Button();
+            this.btn00 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelResult
@@ -76,21 +76,10 @@
             this.btnBackspace.UseVisualStyleBackColor = true;
             this.btnBackspace.Click += new System.EventHandler(this.btnBackspace_Click);
             // 
-            // btnPlusMinus
-            // 
-            this.btnPlusMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlusMinus.Location = new System.Drawing.Point(156, 81);
-            this.btnPlusMinus.Name = "btnPlusMinus";
-            this.btnPlusMinus.Size = new System.Drawing.Size(60, 60);
-            this.btnPlusMinus.TabIndex = 3;
-            this.btnPlusMinus.Text = "+/-";
-            this.btnPlusMinus.UseVisualStyleBackColor = true;
-            this.btnPlusMinus.Click += new System.EventHandler(this.btnPlusMinus_Click);
-            // 
             // btnDivision
             // 
             this.btnDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDivision.Location = new System.Drawing.Point(228, 81);
+            this.btnDivision.Location = new System.Drawing.Point(156, 81);
             this.btnDivision.Name = "btnDivision";
             this.btnDivision.Size = new System.Drawing.Size(60, 60);
             this.btnDivision.TabIndex = 4;
@@ -101,7 +90,7 @@
             // btnMultiplication
             // 
             this.btnMultiplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMultiplication.Location = new System.Drawing.Point(228, 147);
+            this.btnMultiplication.Location = new System.Drawing.Point(228, 81);
             this.btnMultiplication.Name = "btnMultiplication";
             this.btnMultiplication.Size = new System.Drawing.Size(60, 60);
             this.btnMultiplication.TabIndex = 8;
@@ -145,7 +134,7 @@
             // btnMinus
             // 
             this.btnMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinus.Location = new System.Drawing.Point(228, 213);
+            this.btnMinus.Location = new System.Drawing.Point(228, 147);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(60, 60);
             this.btnMinus.TabIndex = 12;
@@ -189,7 +178,7 @@
             // btnPlus
             // 
             this.btnPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlus.Location = new System.Drawing.Point(228, 279);
+            this.btnPlus.Location = new System.Drawing.Point(228, 213);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(60, 60);
             this.btnPlus.TabIndex = 16;
@@ -244,7 +233,7 @@
             // btnDot
             // 
             this.btnDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDot.Location = new System.Drawing.Point(156, 345);
+            this.btnDot.Location = new System.Drawing.Point(228, 279);
             this.btnDot.Name = "btnDot";
             this.btnDot.Size = new System.Drawing.Size(60, 60);
             this.btnDot.TabIndex = 19;
@@ -263,11 +252,23 @@
             this.btn0.UseVisualStyleBackColor = true;
             this.btn0.Click += new System.EventHandler(this.btn0_Click);
             // 
+            // btn00
+            // 
+            this.btn00.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn00.Location = new System.Drawing.Point(156, 345);
+            this.btn00.Name = "btn00";
+            this.btn00.Size = new System.Drawing.Size(60, 60);
+            this.btn00.TabIndex = 21;
+            this.btn00.Text = "00";
+            this.btn00.UseVisualStyleBackColor = true;
+            this.btn00.Click += new System.EventHandler(this.btn00_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 415);
+            this.Controls.Add(this.btn00);
             this.Controls.Add(this.btnEqual);
             this.Controls.Add(this.btnDot);
             this.Controls.Add(this.btn0);
@@ -284,7 +285,6 @@
             this.Controls.Add(this.btn8);
             this.Controls.Add(this.btn7);
             this.Controls.Add(this.btnDivision);
-            this.Controls.Add(this.btnPlusMinus);
             this.Controls.Add(this.btnBackspace);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.labelResult);
@@ -299,7 +299,6 @@
         private System.Windows.Forms.Label labelResult;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnBackspace;
-        private System.Windows.Forms.Button btnPlusMinus;
         private System.Windows.Forms.Button btnDivision;
         private System.Windows.Forms.Button btnMultiplication;
         private System.Windows.Forms.Button btn9;
@@ -316,6 +315,7 @@
         private System.Windows.Forms.Button btnEqual;
         private System.Windows.Forms.Button btnDot;
         private System.Windows.Forms.Button btn0;
+        private System.Windows.Forms.Button btn00;
     }
 }
 
