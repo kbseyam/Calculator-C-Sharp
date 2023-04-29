@@ -52,7 +52,7 @@
             this.LabelResult.Location = new System.Drawing.Point(12, 62);
             this.LabelResult.Name = "LabelResult";
             this.LabelResult.Size = new System.Drawing.Size(292, 34);
-            this.LabelResult.TabIndex = 0;
+            this.LabelResult.TabIndex = 21;
             this.LabelResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // BtnClear
@@ -83,7 +83,7 @@
             this.BtnDivision.Location = new System.Drawing.Point(160, 112);
             this.BtnDivision.Name = "BtnDivision";
             this.BtnDivision.Size = new System.Drawing.Size(70, 70);
-            this.BtnDivision.TabIndex = 4;
+            this.BtnDivision.TabIndex = 3;
             this.BtnDivision.Text = "÷";
             this.BtnDivision.UseVisualStyleBackColor = true;
             this.BtnDivision.Click += new System.EventHandler(this.btnDivision_Click);
@@ -94,7 +94,7 @@
             this.BtnMultiplication.Location = new System.Drawing.Point(234, 112);
             this.BtnMultiplication.Name = "BtnMultiplication";
             this.BtnMultiplication.Size = new System.Drawing.Size(70, 70);
-            this.BtnMultiplication.TabIndex = 8;
+            this.BtnMultiplication.TabIndex = 4;
             this.BtnMultiplication.Text = "×";
             this.BtnMultiplication.UseVisualStyleBackColor = true;
             this.BtnMultiplication.Click += new System.EventHandler(this.btnMultiplication_Click);
@@ -138,7 +138,7 @@
             this.BtnMinus.Location = new System.Drawing.Point(234, 188);
             this.BtnMinus.Name = "BtnMinus";
             this.BtnMinus.Size = new System.Drawing.Size(70, 70);
-            this.BtnMinus.TabIndex = 12;
+            this.BtnMinus.TabIndex = 8;
             this.BtnMinus.Text = "-";
             this.BtnMinus.UseVisualStyleBackColor = true;
             this.BtnMinus.Click += new System.EventHandler(this.btnMinus_Click);
@@ -182,7 +182,7 @@
             this.BtnPlus.Location = new System.Drawing.Point(234, 264);
             this.BtnPlus.Name = "BtnPlus";
             this.BtnPlus.Size = new System.Drawing.Size(70, 70);
-            this.BtnPlus.TabIndex = 16;
+            this.BtnPlus.TabIndex = 12;
             this.BtnPlus.Text = "+";
             this.BtnPlus.UseVisualStyleBackColor = true;
             this.BtnPlus.Click += new System.EventHandler(this.btnPlus_Click);
@@ -226,7 +226,7 @@
             this.BtnEqual.Location = new System.Drawing.Point(234, 416);
             this.BtnEqual.Name = "BtnEqual";
             this.BtnEqual.Size = new System.Drawing.Size(70, 70);
-            this.BtnEqual.TabIndex = 20;
+            this.BtnEqual.TabIndex = 19;
             this.BtnEqual.Text = "=";
             this.BtnEqual.UseVisualStyleBackColor = true;
             this.BtnEqual.Click += new System.EventHandler(this.btnEqual_Click);
@@ -237,7 +237,7 @@
             this.BtnDot.Location = new System.Drawing.Point(234, 340);
             this.BtnDot.Name = "BtnDot";
             this.BtnDot.Size = new System.Drawing.Size(70, 70);
-            this.BtnDot.TabIndex = 19;
+            this.BtnDot.TabIndex = 16;
             this.BtnDot.Text = ".";
             this.BtnDot.UseVisualStyleBackColor = true;
             this.BtnDot.Click += new System.EventHandler(this.btnDot_Click);
@@ -259,7 +259,7 @@
             this.Btn00.Location = new System.Drawing.Point(160, 416);
             this.Btn00.Name = "Btn00";
             this.Btn00.Size = new System.Drawing.Size(70, 70);
-            this.Btn00.TabIndex = 21;
+            this.Btn00.TabIndex = 18;
             this.Btn00.Text = "00";
             this.Btn00.UseVisualStyleBackColor = true;
             this.Btn00.Click += new System.EventHandler(this.btn00_Click);
@@ -270,7 +270,7 @@
             this.LabelPrevResult.Location = new System.Drawing.Point(12, 19);
             this.LabelPrevResult.Name = "LabelPrevResult";
             this.LabelPrevResult.Size = new System.Drawing.Size(292, 34);
-            this.LabelPrevResult.TabIndex = 22;
+            this.LabelPrevResult.TabIndex = 20;
             this.LabelPrevResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form1
