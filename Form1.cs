@@ -15,22 +15,35 @@ namespace Calculator {
             DIVISION = '÷'
         }
 
+        private void ConcatToLabelResult(char newChar) {
+            if (labelResult.Text.Length < 15) {
+                labelResult.Text += newChar;
+            } else {
+                MessageBox.Show("Max is 15 number");
+            }
+        }
+
+        private void ConcatToLabelResult(string newText) {
+            for (int i = 0; i < newText.Length; i++) {
+                ConcatToLabelResult(newText[i]);
+            }
+        }
 
         private void btn0_Click(object sender, EventArgs e) {
-            labelResult.Text += '0';
+            ConcatToLabelResult('0');
         }
 
         private void btn00_Click(object sender, EventArgs e) {
-            labelResult.Text += "00";
+            ConcatToLabelResult("00");
         }
 
         private void btnDot_Click(object sender, EventArgs e) {
             if (string.IsNullOrEmpty(labelResult.Text)) {
                 labelResult.Text = "0.";
             } else if (IsOperator(labelResult.Text.Last())) {
-                labelResult.Text += "0.";
+                ConcatToLabelResult("0.");
             } else if (!DotIsExist()) {
-                labelResult.Text += '.';
+                ConcatToLabelResult('.');
             }
         }
 
@@ -41,15 +54,15 @@ namespace Calculator {
         }
 
         private void btn1_Click(object sender, EventArgs e) {
-            labelResult.Text += '1';
+            ConcatToLabelResult('1');
         }
 
         private void btn2_Click(object sender, EventArgs e) {
-            labelResult.Text += '2';
+            ConcatToLabelResult('2');
         }
 
         private void btn3_Click(object sender, EventArgs e) {
-            labelResult.Text += '3';
+            ConcatToLabelResult('3');
         }
 
         private void btnPlus_Click(object sender, EventArgs e) {
@@ -57,19 +70,19 @@ namespace Calculator {
                 return;
 
             if (!ResultIsEndWithOperation())
-                labelResult.Text += (char)Opertions.PLUS;
+                ConcatToLabelResult((char)Opertions.PLUS);
         }
 
         private void btn4_Click(object sender, EventArgs e) {
-            labelResult.Text += '4';
+            ConcatToLabelResult('4');
         }
 
         private void btn5_Click(object sender, EventArgs e) {
-            labelResult.Text += '5';
+            ConcatToLabelResult('5');
         }
 
         private void btn6_Click(object sender, EventArgs e) {
-            labelResult.Text += '6';
+            ConcatToLabelResult('6');
         }
 
         private void btnMinus_Click(object sender, EventArgs e) {
@@ -77,19 +90,19 @@ namespace Calculator {
                 return;
 
             if (!ResultIsEndWithOperation())
-                labelResult.Text += (char)Opertions.MINUS;
+                ConcatToLabelResult((char)Opertions.MINUS);
         }
 
         private void btn7_Click(object sender, EventArgs e) {
-            labelResult.Text += '7';
+            ConcatToLabelResult('7');
         }
 
         private void btn8_Click(object sender, EventArgs e) {
-            labelResult.Text += '8';
+            ConcatToLabelResult('8');
         }
 
         private void btn9_Click(object sender, EventArgs e) {
-            labelResult.Text += '9';
+            ConcatToLabelResult('9');
         }
 
         private void btnMultiplication_Click(object sender, EventArgs e) {
@@ -97,7 +110,7 @@ namespace Calculator {
                 return;
 
             if (!ResultIsEndWithOperation())
-                labelResult.Text += (char)Opertions.MULTIPLICATION;
+                ConcatToLabelResult((char)Opertions.MULTIPLICATION);
         }
 
         private void btnClear_Click(object sender, EventArgs e) {
@@ -115,7 +128,7 @@ namespace Calculator {
                 return;
 
             if (!ResultIsEndWithOperation())
-                labelResult.Text += (char)Opertions.DIVISION;
+                ConcatToLabelResult((char)Opertions.DIVISION);
         }
 
         private bool ResultIsEndWithOperation() {
