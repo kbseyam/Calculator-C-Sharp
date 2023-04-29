@@ -23,7 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.labelResult = new System.Windows.Forms.Label();
+            this.LabelResult = new System.Windows.Forms.Label();
             this.BtnClear = new System.Windows.Forms.Button();
             this.BtnBackspace = new System.Windows.Forms.Button();
             this.BtnDivision = new System.Windows.Forms.Button();
@@ -43,16 +43,17 @@
             this.BtnDot = new System.Windows.Forms.Button();
             this.Btn0 = new System.Windows.Forms.Button();
             this.Btn00 = new System.Windows.Forms.Button();
+            this.LabelPrevResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // labelResult
+            // LabelResult
             // 
-            this.labelResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResult.Location = new System.Drawing.Point(12, 62);
-            this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(292, 34);
-            this.labelResult.TabIndex = 0;
-            this.labelResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LabelResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelResult.Location = new System.Drawing.Point(12, 62);
+            this.LabelResult.Name = "LabelResult";
+            this.LabelResult.Size = new System.Drawing.Size(292, 34);
+            this.LabelResult.TabIndex = 0;
+            this.LabelResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // BtnClear
             // 
@@ -263,11 +264,21 @@
             this.Btn00.UseVisualStyleBackColor = true;
             this.Btn00.Click += new System.EventHandler(this.btn00_Click);
             // 
+            // LabelPrevResult
+            // 
+            this.LabelPrevResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelPrevResult.Location = new System.Drawing.Point(12, 19);
+            this.LabelPrevResult.Name = "LabelPrevResult";
+            this.LabelPrevResult.Size = new System.Drawing.Size(292, 34);
+            this.LabelPrevResult.TabIndex = 22;
+            this.LabelPrevResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(316, 496);
+            this.Controls.Add(this.LabelPrevResult);
             this.Controls.Add(this.Btn00);
             this.Controls.Add(this.BtnEqual);
             this.Controls.Add(this.BtnDot);
@@ -287,7 +298,7 @@
             this.Controls.Add(this.BtnDivision);
             this.Controls.Add(this.BtnBackspace);
             this.Controls.Add(this.BtnClear);
-            this.Controls.Add(this.labelResult);
+            this.Controls.Add(this.LabelResult);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -296,7 +307,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelResult;
+        private System.Windows.Forms.Label LabelResult;
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.Button BtnBackspace;
         private System.Windows.Forms.Button BtnDivision;
@@ -316,6 +327,7 @@
         private System.Windows.Forms.Button BtnDot;
         private System.Windows.Forms.Button Btn0;
         private System.Windows.Forms.Button Btn00;
+        private System.Windows.Forms.Label LabelPrevResult;
     }
 }
 

@@ -16,8 +16,8 @@ namespace Calculator {
         }
 
         private void ConcatToLabelResult(char newChar) {
-            if (labelResult.Text.Length < 15) {
-                labelResult.Text += newChar;
+            if (LabelResult.Text.Length < 15) {
+                LabelResult.Text += newChar;
             } else {
                 MessageBox.Show("Max is 15 number");
             }
@@ -38,9 +38,9 @@ namespace Calculator {
         }
 
         private void btnDot_Click(object sender, EventArgs e) {
-            if (string.IsNullOrEmpty(labelResult.Text)) {
-                labelResult.Text = "0.";
-            } else if (IsOperator(labelResult.Text.Last())) {
+            if (string.IsNullOrEmpty(LabelResult.Text)) {
+                LabelResult.Text = "0.";
+            } else if (IsOperator(LabelResult.Text.Last())) {
                 ConcatToLabelResult("0.");
             } else if (!DotIsExist()) {
                 ConcatToLabelResult('.');
@@ -48,8 +48,9 @@ namespace Calculator {
         }
 
         private void btnEqual_Click(object sender, EventArgs e) {
-            if (!string.IsNullOrEmpty(labelResult.Text)) {
-                labelResult.Text = Calculate();
+            if (!string.IsNullOrEmpty(LabelResult.Text)) {
+                LabelPrevResult.Text = LabelResult.Text + " =";
+                LabelResult.Text = Calculate();
             }
         }
 
@@ -66,7 +67,7 @@ namespace Calculator {
         }
 
         private void btnPlus_Click(object sender, EventArgs e) {
-            if (string.IsNullOrEmpty(labelResult.Text))
+            if (string.IsNullOrEmpty(LabelResult.Text))
                 return;
 
             if (!ResultIsEndWithOperation())
@@ -86,7 +87,7 @@ namespace Calculator {
         }
 
         private void btnMinus_Click(object sender, EventArgs e) {
-            if (string.IsNullOrEmpty(labelResult.Text))
+            if (string.IsNullOrEmpty(LabelResult.Text))
                 return;
 
             if (!ResultIsEndWithOperation())
@@ -106,7 +107,7 @@ namespace Calculator {
         }
 
         private void btnMultiplication_Click(object sender, EventArgs e) {
-            if (string.IsNullOrEmpty(labelResult.Text))
+            if (string.IsNullOrEmpty(LabelResult.Text))
                 return;
 
             if (!ResultIsEndWithOperation())
@@ -114,17 +115,18 @@ namespace Calculator {
         }
 
         private void btnClear_Click(object sender, EventArgs e) {
-            labelResult.Text = string.Empty;
+            LabelResult.Text = string.Empty;
+            LabelPrevResult.Text = string.Empty;
         }
 
         private void btnBackspace_Click(object sender, EventArgs e) {
-            if (!string.IsNullOrEmpty(labelResult.Text)) {
-                labelResult.Text = labelResult.Text.Remove(labelResult.Text.Length - 1);
+            if (!string.IsNullOrEmpty(LabelResult.Text)) {
+                LabelResult.Text = LabelResult.Text.Remove(LabelResult.Text.Length - 1);
             }
         }
 
         private void btnDivision_Click(object sender, EventArgs e) {
-            if (string.IsNullOrEmpty(labelResult.Text))
+            if (string.IsNullOrEmpty(LabelResult.Text))
                 return;
 
             if (!ResultIsEndWithOperation())
@@ -132,8 +134,8 @@ namespace Calculator {
         }
 
         private bool ResultIsEndWithOperation() {
-            return labelResult.Text.Last() == (char)Opertions.PLUS || labelResult.Text.Last() == (char)Opertions.MINUS ||
-                labelResult.Text.Last() == (char)Opertions.MULTIPLICATION || labelResult.Text.Last() == (char)Opertions.DIVISION;
+            return LabelResult.Text.Last() == (char)Opertions.PLUS || LabelResult.Text.Last() == (char)Opertions.MINUS ||
+                LabelResult.Text.Last() == (char)Opertions.MULTIPLICATION || LabelResult.Text.Last() == (char)Opertions.DIVISION;
         }
 
         private int IndexPrevOper(string text, int currentOperIndex) {
@@ -186,7 +188,7 @@ namespace Calculator {
         }
 
         private string Calculate() {
-            string text = labelResult.Text;
+            string text = LabelResult.Text;
             while (!double.TryParse(text, out _)) {
                 for (int i = 0; i < text.Length; ++i) {
                     if (text[i] == (char)Opertions.MULTIPLICATION) {
@@ -214,7 +216,7 @@ namespace Calculator {
         }
 
         private bool DotIsExist() {
-            string temp = labelResult.Text;
+            string temp = LabelResult.Text;
             int indexPrevOper = IndexPrevOper(temp, temp.Length - 1);
             if (indexPrevOper != -1) {
                 temp = temp.Substring(indexPrevOper);
